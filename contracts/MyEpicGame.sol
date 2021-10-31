@@ -64,7 +64,7 @@ contract MyEpicGame is ERC721 {
     // This is the name and symbol for our token, ex Ethereum and ETH. I just call mine
     // Heroes and HERO. Remember, an NFT is just a token!
   )
-    ERC721("Heroes", "HERO")
+    ERC721("Pokemon", "Monsters")
   {
      // Initialize the boss. Save it to our global "bigBoss" state variable.
     bigBoss = BigBoss({
@@ -135,22 +135,22 @@ contract MyEpicGame is ERC721 {
   string memory strMaxHp = Strings.toString(charAttributes.maxHp);
   string memory strAttackDamage = Strings.toString(charAttributes.attackDamage);
 
-  string memory json = Base64.encode(
-    bytes(
-      string(
-        abi.encodePacked(
-          '{"name": "',
-          charAttributes.name,
-          ' -- NFT #: ',
-          Strings.toString(_tokenId),
-          '", "description": "This is an NFT that lets people play in the game Metaverse Slayer!", "image": "',
-          charAttributes.imageURI,
-          '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
-          strAttackDamage,'} ]}'
+  string memory json = Base64.encode( 
+      bytes(
+        string(
+          abi.encodePacked(
+            '{"name": "',
+            charAttributes.name,
+            ' -- NFT #: ',
+            Strings.toString(_tokenId),
+            '", "description": "An epic NFT", "image": "ipfs://',
+            charAttributes.imageURI,
+            '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
+            strAttackDamage,'} ]}'
+          )
         )
       )
-    )
-  );
+    );  
     string memory output = string(
       abi.encodePacked("data:application/json;base64,", json)
     );

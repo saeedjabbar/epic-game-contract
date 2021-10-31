@@ -4,13 +4,13 @@ const main = async () => {
   //create local blockchain and deploy
   const gameContract = await gameContractFactory.deploy(
     ["Meowth", "Charizard", "Bulbasaur"],       // Names
-    ["https://i.imgur.com/Q90mY2o.gif", // Images
-      "https://i.imgur.com/ycKfK3x.gif",
-      "https://i.imgur.com/jwub4R5.gif"],
+    ["QmewJp5NBEh4Pyfg1uEwFgCAC8Co4pVy9sNmQ7U8m1HNTd", // Images
+      "QmYEAbFKAqHkBaUNPgsWuziHvz4Y4LcznGBA3mB83BeTTF",
+      "QmewJp5NBEh4Pyfg1uEwFgCAC8Co4pVy9sNmQ7U8m1HNTd"],
     [100, 100, 100],                    // HP values
     [3, 2, 4],                       // Attack damage values
     "Bob Sponge", // Boss name
-    "https://i.imgur.com/XqQ2Wps.gif", // Boss image
+    "QmbZGYSUkmRgmiqW5juoTwXDwenJNx8XMQkB4JsCjwyz9q", // Boss image
     100, // Boss hp
     3 // Boss attack damage
   );
